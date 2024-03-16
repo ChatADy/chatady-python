@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "chatady"
-version = "1.0.0"
+version = "1.0.1"
 description = "A Python wrapper for the ChatADy API."
 readme = "README.md"
 authors = [{ name = "Jernej Pregelj", email = "contact@chatady.com" }]

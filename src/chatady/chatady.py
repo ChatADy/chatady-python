@@ -9,7 +9,7 @@ class ChatADy:
         self.key = key
         self.options = {'environment': 'production', 'noDelay': True, 'timeout': 1000}
         self.options.update(options)
-        self.hostname = 'chatady.com'
+        self.hostname = 'backend.chatady.com'
         self.port = 443
         self.prepath = '/api/v1'
 
