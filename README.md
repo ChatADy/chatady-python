@@ -26,14 +26,14 @@ Here's a quick example to get you started:
 from chatady.chatady import ChatADy
 
 # Initialize the ChatADy client
-client = ChatADy(publisher_id='your_publisher_id', key='your_api_key')
+client = ChatADy('your_publisher_id', 'your_api_key')
 
 # Send in messages
-response = client.new_chat(chat_id='unique_id_identifying_conversation', entry='your_entry_message', human='boolean_human_or_bot')
+response = client.new_chat('unique_id_identifying_conversation', 'your_entry_message', 'boolean_human_or_bot')
 print(response)
 
 # Get ad contents
-response = client.get_contents(chat_id='unique_id_identifying_conversation')
+response = client.get_contents('unique_id_identifying_conversation')
 print(response)
 ```
 
@@ -42,22 +42,22 @@ print(response)
 To interact with the API, you need to create an instance of `ChatADy`:
 
 ```python
-client = ChatADy(publisher_id='your_publisher_id', key='your_api_key')
+client = ChatADy('your_publisher_id', 'your_api_key')
 ```
 
 You can also pass additional options as a dictionary to configure the client further:
 
 ```python
 options = {'environment': 'production', 'noDelay': True, 'timeout': 1000}
-client = ChatADy(publisher_id='your_publisher_id', key='your_api_key', options=options)
+client = ChatADy('your_publisher_id', 'your_api_key', options)
 ```
 
 ### Retrieving Ad Contents
 
-To retrieve contents, use the `get_contents` method with the chat ID. You can also specify options for filtering:
+To retrieve contents, use the `get_contents` method with the chat ID. You can also specify options for better targeting:
 
 ```python
-response = client.get_contents(chat_id='unique_id_identifying_conversation', options={'humansex': 'male', 'botsex': 'female'})
+response = client.get_contents('unique_id_identifying_conversation', {'humansex': 'male', 'botsex': 'female'})
 print(response)
 ```
 
@@ -66,7 +66,7 @@ print(response)
 To start a new chat, use the `new_chat` method with the chat ID, entry message, and human identifier:
 
 ```python
-response = client.new_chat(chat_id='unique_id_identifying_conversation', entry='Hello, ChatADy!', human='boolean_human_or_bot')
+response = client.new_chat('unique_id_identifying_conversation', 'Hello, ChatADy!', 'boolean_human_or_bot')
 print(response)
 ```
 
