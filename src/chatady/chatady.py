@@ -29,8 +29,6 @@ class ChatADy:
             'Authorization': self.key
         }
         response = requests.get(url, headers=headers, timeout=self.options['timeout'])
-        print(f"STATUS: {response.status_code}")
-        print(f"HEADERS: {response.headers}")
         return response.text
 
     def new_chat(self, chat_id, entry, human):
@@ -43,6 +41,4 @@ class ChatADy:
             'Authorization': self.key
         }
         response = requests.post(url, headers=headers, data=post_data, timeout=self.options['timeout'])
-        print(f"STATUS: {response.status_code}")
-        print(f"HEADERS: {response.headers}")
         return response.text
