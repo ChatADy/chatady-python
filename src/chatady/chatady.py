@@ -31,8 +31,8 @@ class ChatADy:
         response = requests.get(url, headers=headers, timeout=self.options['timeout'])
         return response.text
 
-    def new_chat(self, chat_id, entry, human):
-        post_data = json.dumps({'human': human, 'entry': entry})
+    def new_chat(self, chat_id, entry, human, content=None):
+        post_data = json.dumps({'human': human, 'entry': entry, 'content': content})
         path = f"{self.prepath}/{'chats' if self.options['environment'] == 'production' else 'test-chats'}/{self.publisher_id}/{chat_id}"
         url = f"https://{self.hostname}:{self.port}{path}"
         headers = {
