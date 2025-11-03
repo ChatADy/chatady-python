@@ -1,6 +1,6 @@
 # ChatADy Package for Python
 
-The `ChatADy` package is a Python wrapper for the ChatADy API, facilitating easy interaction with ChatADy's services from Python applications. It provides methods to retrieve contents and initiate new chats.
+The `ChatADy` package is a Python wrapper for the ChatADy API, facilitating easy interaction with ChatADy's services from Python applications. It offers methods to send in messages and retrieve AD content.
 
 ## Installation
 
@@ -29,13 +29,9 @@ from chatady.chatady import ChatADy
 client = ChatADy('your_publisher_id', 'your_api_key')
 
 # Send in messages
-response = client.new_chat('unique_id_identifying_conversation', 'your_entry_message', 'boolean_human_or_bot')
+response = client.new_chat('unique_id_conversation', 'unique_id_speaker', 'speaker_message', 'request_ad_type')
 print(response)
 
-# Get ad contents
-response = client.get_contents('unique_id_identifying_conversation')
-print(response)
-```
 
 ### Initializing the Client
 
@@ -52,21 +48,21 @@ options = {'environment': 'production', 'noDelay': True, 'timeout': 1000}
 client = ChatADy('your_publisher_id', 'your_api_key', options)
 ```
 
-### Retrieving Ad Contents
+### Sending in a new chat message
 
-To retrieve contents, use the `get_contents` method with the chat ID. You can also specify options for better targeting:
+To start a new chat, use the `new_chat` method with the chat ID, speaker ID and speaker message:
 
 ```python
-response = client.get_contents('unique_id_identifying_conversation', {'humansex': 'male', 'botsex': 'female'})
+response = client.new_chat('conversation_id_1', 'speaker_id_1', 'Hello, ChatADy!')
 print(response)
 ```
 
-### Sending in a New Message
+### Sending in a new chat message & retrieve AD content
 
-To start a new chat, use the `new_chat` method with the chat ID, entry message, and human identifier:
+To start a new chat, use the `new_chat` method with the chat ID, speaker ID and speaker message:
 
 ```python
-response = client.new_chat('unique_id_identifying_conversation', 'Hello, ChatADy!', 'boolean_human_or_bot')
+response = client.new_chat('conversation_id_1', 'speaker_id_1', 'Hello, ChatADy!', 'PPC-TEXTLINK')
 print(response)
 ```
 
