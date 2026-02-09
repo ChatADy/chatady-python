@@ -29,7 +29,7 @@ from chatady.chatady import ChatADy
 client = ChatADy('your_publisher_id', 'your_api_key')
 
 # Send in messages
-response = client.new_chat('unique_id_conversation', 'unique_id_speaker', 'speaker_message', 'request_ad_type')
+response = client.new_chat('unique_id_conversation', 'unique_id_speaker', 'speaker_ip', 'speaker_message', 'request_ad_type')
 print(response)
 
 
@@ -50,10 +50,10 @@ client = ChatADy('your_publisher_id', 'your_api_key', options)
 
 ### Sending in a new chat message
 
-To start a new chat, use the `new_chat` method with the chat ID, speaker ID and speaker message:
+To start a new chat, use the `new_chat` method with the chat ID, speaker ID, speaker IP and speaker message:
 
 ```python
-response = client.new_chat('conversation_id_1', 'speaker_id_1', 'Hello, ChatADy!')
+response = client.new_chat('conversation_id_1', 'speaker_id_1', '203.0.113.10','Hello, ChatADy!')
 print(response)
 ```
 
@@ -62,7 +62,7 @@ print(response)
 To start a new chat, use the `new_chat` method with the chat ID, speaker ID and speaker message:
 
 ```python
-response = client.new_chat('conversation_id_1', 'speaker_id_1', 'Hello, ChatADy!', 'PPC-TEXTLINK')
+response = client.new_chat('conversation_id_1', 'speaker_id_1', '203.0.113.10', 'Hello, ChatADy!', 'PPC-TEXTLINK')
 print(response)
 ```
 
