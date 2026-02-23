@@ -13,8 +13,8 @@ class ChatADy:
         self.port = 443
         self.prepath = '/api/v1'
 
-    def new_chat(self, chat_id, chatter_id, chatter_ip, entry, ad=None):
-        post_data = json.dumps({'entry': entry, 'ad': ad, 'chatterIp': chatter_ip})
+    def new_chat(self, chat_id, chatter_id, entry, ad=None):
+        post_data = json.dumps({'entry': entry, 'ad': ad})
         path = f"{self.prepath}/{'chats' if self.options['environment'] == 'production' else 'test-chats'}/{self.publisher_id}/{chat_id}/{chatter_id}"
         url = f"https://{self.hostname}:{self.port}{path}"
         headers = {
