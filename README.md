@@ -62,7 +62,7 @@ print(response)
 To start a new chat, use the `new_chat` method with the chat ID, speaker ID and speaker message:
 
 ```python
-response = client.new_chat('conversation_id_1', 'speaker_id_1', 'Hello, ChatADy!', 'PPC-TEXTLINK')
+response = client.new_chat('conversation_id_1', 'speaker_id_1', 'Hello, ChatADy!', 'TEXTLINK')
 print(response)
 ```
 
